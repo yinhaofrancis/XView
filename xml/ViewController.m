@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <XParser/XParser.h>
+#import "XParser.h"
 @interface ViewController ()
 @property(nonatomic,nullable) UIView* xView;
 @end
@@ -19,9 +19,7 @@
     
     [self load];
     
-    NSLog(@"%@",[[UIColor alloc] initWithString: @"#abcdff12"]);
-    
-    NSLog(@"%@",NSStringFromCGRect(CGRectMake(0, 0, 100, 100)));
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -31,9 +29,8 @@
 
 -(void) load{
     [self.xView removeFromSuperview];
-    self.xView = [[XLayoutParser shared] parseLayout:@"/Users/knowchat02/Downloads/1/k.xml"];
+    self.xView =  (UIView*)[[[XParser alloc] initWithUrl:[NSURL fileURLWithPath:@"/Users/knowchat02/Downloads/1/k.xml"]] parse];
     [self.view addSubview:self.xView];
 }
-
 
 @end

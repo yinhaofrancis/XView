@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XElement.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIColor (XColor)
-- (instancetype) initWithString:(NSString*)code;
+@interface UIColor (XColor)<XElement>
+- (instancetype) initWithCode:(NSString*)code;
 - (NSArray<NSNumber*> *)seperate:(NSString*)code step:(NSInteger)step;
 @end
 

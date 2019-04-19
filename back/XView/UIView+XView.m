@@ -60,7 +60,7 @@
 }
 - (void)loadAttribute:(NSString *)key value:(NSString*)value{
     if ([key isEqualToString:@"backgroundColor"]){
-        self.backgroundColor = [[UIColor alloc] initWithString:value];
+        self.backgroundColor = [[UIColor alloc] initWithCode:value];
     }
     if ([key isEqualToString:@"frame"]){
         self.frame = XStringToRect(value);
@@ -78,7 +78,7 @@
         self.clipsToBounds = [value stringBoolValue];
     }
     if ([key isEqualToString:@"shadowColor"]) {
-        self.layer.shadowColor = [[UIColor alloc] initWithString:value].CGColor;
+        self.layer.shadowColor = [[UIColor alloc] initWithCode:value].CGColor;
     }
     if ([key isEqualToString:@"shadowOffset"]) {
         self.layer.shadowOffset = XStringToSize(value);

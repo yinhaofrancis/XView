@@ -16,9 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSString                *name;
 @property (nonatomic, readonly) NSDictionary            *attribute;
-@property (nonatomic, readonly) NSArray<id<XElement>>   *children;
-@property (nonatomic, readonly) NSArray<id<XElement>>   *elementAttribute;
-@property (nonatomic, weak)     id<XElement>            parent;
+
 
 - (void)addChild:(id<XElement>)child;
 
@@ -28,4 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@protocol XAttribute <NSObject>
+
+- (instancetype)initWithCode:(NSString*)code;
+
+@end
 NS_ASSUME_NONNULL_END

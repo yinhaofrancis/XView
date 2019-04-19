@@ -9,7 +9,7 @@
 #import "UIColor+XColor.h"
 #import "NSString+XString.h"
 @implementation UIColor (XColor)
-- (instancetype)initWithString:(NSString *)code{
+- (instancetype)initWithCode:(NSString *)code{
     NSString* processedCode = [code trimmingSpace];
     if([processedCode hasPrefix:@"#"]) {
         if(code.length == 4 || code.length == 7){

@@ -15,8 +15,8 @@ typedef NS_ENUM(NSUInteger, ImageDataType) {
     ImageDataBlob,
     ImageDataUnknown
 };
-@interface UIImage (XImage)<XElement>
-- (instancetype)initWithCode:(NSString*)code;
+@interface UIImage (XImage)<XElement,XAttribute>
+
 @end
 
 NS_ASSUME_NONNULL_END
